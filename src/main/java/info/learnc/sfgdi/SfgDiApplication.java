@@ -1,9 +1,6 @@
 package info.learnc.sfgdi;
 
-import info.learnc.sfgdi.controllers.ConstructorInjectedController;
-import info.learnc.sfgdi.controllers.MyController;
-import info.learnc.sfgdi.controllers.PropertyInjectedController;
-import info.learnc.sfgdi.controllers.SetterInjectedController;
+import info.learnc.sfgdi.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -33,6 +30,9 @@ public class SfgDiApplication {
 		ConstructorInjectedController constructorInjectedController =
 				(ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 		System.out.println(constructorInjectedController.getGreeting());
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 	}
 
 }
